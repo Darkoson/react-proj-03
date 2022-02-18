@@ -7,6 +7,7 @@ const TicketWrapper = styled.div`
   border-radius: 20px;
   &:not(:last-child) {
     margin-bottom: 5%;
+    margin-right: ${(props) => (!!props.marginRight ? "1%" : "0")};
   }
 `;
 
@@ -19,13 +20,12 @@ const Body = styled.p`
   width: 100%;
 `;
 
-const Ticket = ({ ticket }) => {
-  return (
-    <TicketWrapper>
-      <Title>{ticket.title}</Title>
-      <Body>{ticket.body}</Body>
-    </TicketWrapper>
-  );
-};
+const Ticket = ({ marginRight, ticket }) => (
+  <TicketWrapper marginRight={marginRight}>
+    <Title>{ticket.title}</Title>
+    <Body>{ticket.body}</Body>
+  </TicketWrapper>
+);
+ 
 
 export default Ticket;
