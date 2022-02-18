@@ -5,7 +5,7 @@ const TicketWrapper = styled.div`
   background: darkGray;
   padding: 20px;
   border-radius: 20px;
-  &:not (:last-child) {
+  &:not(:last-child) {
     margin-bottom: 5%;
   }
 `;
@@ -19,7 +19,7 @@ const Body = styled.p`
   width: 100%;
 `;
 
-const Ticket = (ticket) => {
+const Ticket = ({ ticket }) => {
   return (
     <TicketWrapper>
       <Title>{ticket.title}</Title>

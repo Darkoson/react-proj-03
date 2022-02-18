@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Lane from "../components/Lane/Lane";
+import withDataFetching from "../withDataFetching";
 
 const BoardWrapper = styled.div`
   display: flex;
@@ -25,7 +26,9 @@ class Board extends Component {
 
   async componentDidMount() {
     try {
-      const tickets = await fetch('../../assets/data.json');
+      const tickets = await fetch(
+        "https://raw.githubusercontent.com/Darkoson/react-proj-03/main/assets/data.json"
+      );
       const ticketsJson = await tickets.json();
       //  console.log("ticketsJson=", ticketsJson);
 
